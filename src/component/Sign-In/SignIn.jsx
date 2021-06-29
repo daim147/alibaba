@@ -38,10 +38,12 @@ export const SignIn = () => {
           handleChange={(e) => setPassword(e.target.value)}
         />
 
-        <CustomButton type="submit">Sign in </CustomButton>
-        <CustomButton onClick={signWithGoogle}>
-          Sign in with Google{" "}
-        </CustomButton>
+        <div className="buttons">
+          <CustomButton type="submit">Sign in </CustomButton>
+          <CustomButton onClick={signWithGoogle}>
+            Sign in with Google{" "}
+          </CustomButton>
+        </div>
       </form>
     </div>
   );

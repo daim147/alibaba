@@ -8,4 +8,5 @@ a {
 
 * {
   font-family: "Noto Sans JP", sans-serif;
+  box-sizing: border-box;
 }
