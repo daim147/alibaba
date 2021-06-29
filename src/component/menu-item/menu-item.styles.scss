@@ -8,6 +8,9 @@
   position: relative;
   border: 1px solid black;
   margin: 0 7.5px 15px;
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  border: none;
   overflow: hidden;
 
   &:hover .backGround::before {
@@ -43,7 +46,7 @@
     width: 100%;
     background-color: rgba(0, 0, 0, 0.4);
     transform: translateY(-100%);
-    transition: all 0.5s;
+    transition: all 0.5s cubic-bezier(0.86, 0.21, 0, 0.94);
   }
   &:first-child {
     margin-right: 7.5px;
