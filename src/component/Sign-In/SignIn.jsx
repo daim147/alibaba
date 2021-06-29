@@ -10,7 +10,6 @@ export const SignIn = () => {
 
   const submit = (e) => {
     e.preventDefault();
-    console.log(input, password);
     setInput("");
     setPassword("");
   };

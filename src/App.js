@@ -11,15 +11,11 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
-    const unSubscribe = auth.onAuthStateChanged((user) => setCurrentUser(user)); //it will return unsbscribe method
-    // console.log(currentUser, "inUseEFFECT");
+    const unSubscribe = auth.onAuthStateChanged((user) => setCurrentUser(user)); //
     return () => {
-      // console.log("hello unsubribe me");
       unSubscribe();
     };
   }, [currentUser]);
-
-  // console.log(currentUser);
 
   return (
     <div className="App">
