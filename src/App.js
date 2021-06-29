@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Homepage from "./pages/HomePage/homepage.component";
-import { Route, Link, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { Header } from "./component/Header/Header";
 import SignInSignUp from "./pages/sign-in-sign-up/Sign-in-Sign-up";
 import ShopPage from "./pages/ShopPage/ShopPage";
