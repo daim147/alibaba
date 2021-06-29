@@ -1,0 +1,97 @@
+.menu-item {
+  min-width: 30%;
+  height: 240px;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 1px solid black;
+  margin: 0 7.5px 15px;
+  overflow: hidden;
+
+  &:hover .backGround::before {
+    transform: translateY(0);
+  }
+
+  &:hover .backGround {
+    transform: scale(1.2) rotate(-10deg);
+  }
+  &:hover .content {
+    opacity: 1;
+  }
+  &:hover .content::before {
+    transform: translateY(100%);
+  }
+
+  .backGround {
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    position: relative;
+    background-position: center;
+    overflow: hidden;
+    transition: all 2s;
+  }
+  .backGround::before {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    transform: translateY(-100%);
+    transition: all 0.5s;
+  }
+  &:first-child {
+    margin-right: 7.5px;
+  }
+
+  &:last-child {
+    margin-left: 7.5px;
+  }
+  &.large {
+    height: 380px;
+  }
+  .content {
+    position: absolute;
+    height: 70px;
+    padding: 0 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    opacity: 0.8;
+    overflow: hidden;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.596);
+      transition: all 0.5s 0.25s;
+    }
+
+    .title {
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 22px;
+      color: #6e4d4d;
+    }
+
+    .subtitle {
+      font-weight: lighter;
+      display: block;
+      margin-top: -10px;
+      font-size: 16px;
+    }
+  }
+}
