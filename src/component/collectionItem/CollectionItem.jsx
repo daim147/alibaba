@@ -8,10 +8,8 @@ export const CollectionItem = ({ imageUrl, name, price }) => {
     <Tilt
       gyroscope={true}
       perspective={900}
-      glareEnable={true}
-      glareMaxOpacity={0.45}
-      tiltMaxAngleX={10}
-      tiltMaxAngleY={10}
+      tiltMaxAngleX={5}
+      tiltMaxAngleY={5}
       className="collection-item"
     >
       <div className="image">

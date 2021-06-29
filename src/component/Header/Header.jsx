@@ -16,7 +16,7 @@ export const Header = () => {
         <Link className="option" to="/shop">
           Shop
         </Link>
-        <Link className="option" to="/contact">
+        <Link className="option" to="/signIn">
           Contact
         </Link>
       </div>

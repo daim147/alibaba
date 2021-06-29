@@ -20,6 +20,31 @@
 
     .option {
       padding: 10px 15px;
+      display: block;
+      margin: 0 10px;
+      position: relative;
+      transition: all 0.5s;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.671);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+        transform: translateY(100%);
+        transition: all 0.5s;
+        border-radius: 5px;
+      }
+    }
+    .option:hover {
+      color: white;
+    }
+    .option:hover::before {
+      transform: translateY(0);
     }
   }
 }
