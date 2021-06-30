@@ -20,6 +20,7 @@ function App() {
 
       const userRef = await createUserProfileDocument(user);
       userRef.onSnapshot((snap) => {
+        //it will give us data and reference to the user sign in with
         console.log(snap.data());
         setCurrentUser({
           id: snap.id,
@@ -27,8 +28,6 @@ function App() {
         });
       });
     });
-
-    console.log(currentUser, "current uSEr");
 
     return () => {
       unSubscribe();

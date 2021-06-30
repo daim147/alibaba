@@ -23,7 +23,7 @@ const SignOut = () => {
       const { user } = await auth.createUserWithEmailAndPassword(
         email,
         password
-      );
+      ); //it will give us user id from email and pass and we will pass that object to firebase
       await createUserProfileDocument(user, { displayName });
 
       setName("");

@@ -18,10 +18,12 @@ export const auth = firebase.auth();
 export const fireStore = firebase.firestore();
 
 export const createUserProfileDocument = async (user, addional) => {
+  if (!user) return;
   const userRef = fireStore.doc(`users/${user.uid}`); //* create reference of the user uid
 
   const snapShot = await userRef.get(); //* from referene check whether it exists in databade
 
+  console.log(user.uid, addional, snapShot.exists, "firebase");
   // console.log(snapShot, "snapshot");
   if (!snapShot.exists) {
     const { displayName, email } = user;
