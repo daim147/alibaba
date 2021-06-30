@@ -6,8 +6,15 @@
   .title {
     font-size: 28px;
     margin-bottom: 25px;
+    background-color: black;
+    text-align: center;
+    color: white;
+    transition: all 0.5s;
+    border-radius: 5px;
   }
-
+  .title:hover {
+    letter-spacing: 3px;
+  }
   .preview {
     display: flex;
     justify-content: space-between;

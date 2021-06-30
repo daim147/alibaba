@@ -9,7 +9,7 @@
   cursor: pointer;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
   transition: all 0.5s;
-
+  border-radius: 5px;
   &:hover {
     box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.4);
   }
