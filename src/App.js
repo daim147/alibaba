@@ -8,6 +8,8 @@ import ShopPage from "./pages/ShopPage/ShopPage";
 import { auth, createUserProfileDocument } from "./firebase/firebase.util";
 import { connect } from "react-redux";
 import { setCurrentUser } from "./Redux/User/userAction";
+import { selectCurrentUser } from "./Redux/User/user-selector";
+import { createStructuredSelector } from "reselect";
 
 function App({ setCurrentUser, currentUser }) {
   useEffect(() => {
@@ -51,7 +53,7 @@ function App({ setCurrentUser, currentUser }) {
 const mapDispathToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
 });
-const mapStatetoProps = (state) => ({
-  currentUser: state.user.currentUser,
+const mapStatetoProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
 });
 export default connect(mapStatetoProps, mapDispathToProps)(App);
