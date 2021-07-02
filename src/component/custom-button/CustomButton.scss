@@ -39,4 +39,17 @@
     z-index: 100;
     transition: all 0.4s;
   }
+  &.invert {
+    filter: invert(1);
+    position: absolute;
+    transition: transform 0.5s ease-in;
+    opacity: 0.4;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    transition: all 0.5s ease-in;
+    z-index: 5;
+    &:hover {
+      opacity: 1;
+    }
+  }
 }

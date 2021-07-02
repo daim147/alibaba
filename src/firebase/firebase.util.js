@@ -22,9 +22,6 @@ export const createUserProfileDocument = async (user, addional) => {
   const userRef = fireStore.doc(`users/${user.uid}`); //* create reference of the user uid
 
   const snapShot = await userRef.get(); //* from referene check whether it exists in databade
-
-  // console.log(user.uid, addional, snapShot.exists, "firebase");
-  // console.log(snapShot, "snapshot");
   if (!snapShot.exists) {
     const { displayName, email } = user;
     const createdAt = new Date();

@@ -1,12 +1,15 @@
 import React from "react";
 import "./collection-item.styles.scss";
 import Tilt from "react-parallax-tilt";
+import CustomButton from "../custom-button/CustomButton";
+import { connect } from "react-redux";
+import { addItem } from "../../Redux/Cart/cart-actions";
 
-export const CollectionItem = ({ imageUrl, name, price }) => {
+const CollectionItem = ({ item, addItem }) => {
+  const { imageUrl, name, price } = item;
   return (
-    // <Tilt>
     <Tilt
-      // gyroscope={true}
+      gyroscope={true}
       perspective={900}
       tiltMaxAngleX={5}
       tiltMaxAngleY={2}
@@ -19,7 +22,15 @@ export const CollectionItem = ({ imageUrl, name, price }) => {
         <div className="name">{name}</div>
         <div className="price">{price}</div>
       </div>
+      <CustomButton onClick={() => addItem(item)} invert>
+        Add to Cart
+      </CustomButton>
     </Tilt>
-    // </Tilt>
   );
 };
+
+const mapDispatchToProps = (dispatch) => ({
+  addItem: (item) => dispatch(addItem(item)),
+});
+
+export default connect(null, mapDispatchToProps)(CollectionItem);

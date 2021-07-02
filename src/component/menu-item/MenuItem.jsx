@@ -3,7 +3,10 @@ import "./menu-item.styles.scss";
 import { withRouter } from "react-router";
 const MenuItem = ({ imageUrl, title, size, history, linkUrl }) => {
   return (
-    <div className={`menu-item ${size} `} onClick={() => history.push(linkUrl)}>
+    <div
+      className={`menu-item ${size ? size : ""} `}
+      onClick={() => history.push(linkUrl)}
+    >
       <div
         className="backGround"
         style={{

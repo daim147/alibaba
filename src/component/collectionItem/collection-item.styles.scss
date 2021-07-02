@@ -22,10 +22,8 @@
   }
 
   &:hover .collection-footer {
-    // transform: translateY(-40px);
-    background-color: rgba(56, 53, 53, 0.918);
+    background-color: rgba(0, 0, 0, 0.918);
     color: rgb(255, 255, 255);
-    // min-height: 10%;
     font-size: 1.2rem;
     font-weight: 400;
     border-radius: 2px;
@@ -63,24 +61,35 @@
 
   .collection-footer {
     width: 100%;
-    min-height: 5%;
+    min-height: 2.5rem;
     display: flex;
     justify-content: space-between;
     font-size: 18px;
     z-index: 5;
     transition: all 0.5s 0.3s;
     transform: translateZ(100px);
+    align-items: center;
 
     .name {
       width: 80%;
-      margin-bottom: 15px;
-      text-align: center;
-      float: left;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .price {
       width: 20%;
-      float: right;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
     }
+  }
+
+  &:hover button {
+    bottom: 30%;
+    transition: bottom 0.5s ease-in;
+  }
+  button {
+    bottom: -50%;
   }
 }
