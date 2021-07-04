@@ -9,7 +9,6 @@ const CollectionItem = ({ item, addItem }) => {
   const { imageUrl, name, price } = item;
   return (
     <Tilt
-      gyroscope={true}
       perspective={900}
       tiltMaxAngleX={5}
       tiltMaxAngleY={2}

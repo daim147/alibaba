@@ -40,8 +40,8 @@ function App({ setCurrentUser, currentUser }) {
       <Header />
       <Switch>
         <Route exact path="/" component={Homepage} />
-        <Route exact path="/shop" component={ShopPage} />
-        <Route exact path="/checkout" component={checkoutPage} />
+        <Route path="/shop" component={ShopPage} />
+        <Route path="/checkout" component={checkoutPage} />
         <Route
           exact
           path="/signin"
