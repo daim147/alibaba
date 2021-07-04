@@ -9,3 +9,17 @@ export const addItem = (cart, itemToAdd) => {
       : carItem
   );
 };
+
+export const removeItem = (cart, itemToRemove) => {
+  const exist = cart.find((item) => item.id === itemToRemove.id);
+
+  if (exist.quantity === 1) {
+    return cart.filter((item) => item.id !== itemToRemove.id);
+  }
+
+  return cart.map((item) =>
+    item.id === itemToRemove.id
+      ? { ...item, quantity: item.quantity - 1 }
+      : item
+  );
+};
