@@ -7,7 +7,10 @@ export const selectShopData = createSelector(
   (shop) => shop.shopData
 );
 
+export const selectShopDataForPreview = createSelector(
+  [selectShopData],
+  (allData) => Object.values(allData)
+);
+
 export const selectCategory = (category) =>
-  createSelector([selectShopData], (alldata) =>
-    alldata.find((data) => data.routeName === category)
-  );
+  createSelector([selectShopData], (alldata) => alldata[category]);

@@ -4,7 +4,12 @@ import { connect } from "react-redux";
 import { selectCategory } from "../../Redux/shop/shopSelector";
 import CollectionItem from "../collectionItem/CollectionItem";
 
-const CollectionCategory = ({ category: { title, items } }) => {
+const CollectionCategory = ({ category, match }) => {
+  console.log(match.params.categoryId);
+  if (match.params.categoryId === "/checkout") {
+    console.log("hy");
+  }
+  const { title, items } = category;
   return (
     <div className="collection-page">
       <h1 className="title">{title}</h1>

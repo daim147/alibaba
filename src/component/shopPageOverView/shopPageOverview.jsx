@@ -1,7 +1,7 @@
 import React from "react";
 import "./shopPageOverView.styles.scss";
 import { connect } from "react-redux";
-import { selectShopData } from "../../Redux/shop/shopSelector";
+import { selectShopDataForPreview } from "../../Redux/shop/shopSelector";
 import { createStructuredSelector } from "reselect";
 import CollectionPreview from "../collectionPreview/CollectionPreview";
 
@@ -15,6 +15,6 @@ const shopPageOverview = ({ shopData }) => {
   );
 };
 const mapStateToProps = createStructuredSelector({
-  shopData: selectShopData,
+  shopData: selectShopDataForPreview,
 });
 export default connect(mapStateToProps)(shopPageOverview);

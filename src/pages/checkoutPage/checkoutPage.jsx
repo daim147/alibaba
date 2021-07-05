@@ -7,7 +7,7 @@ import {
 import CheckoutItem from "../../component/checkoutItem/CheckoutItem";
 import { createStructuredSelector } from "reselect";
 import { connect } from "react-redux";
-import { span } from "prelude-ls";
+import StripeComponent from "../../component/stripe/stripeComponent";
 
 const checkoutPage = ({ totalAmount, cartItems }) => {
   return (
@@ -35,6 +35,11 @@ const checkoutPage = ({ totalAmount, cartItems }) => {
       <div className="total">
         <span>${totalAmount}</span>
       </div>
+      <div className="card-message">
+        *Please Use following Test credit card for payments* <br />
+        4242 4242 4242 4242 - Exp: any future date - CVV: any 3 digits
+      </div>
+      <StripeComponent price={totalAmount} />
     </div>
   );
 };
